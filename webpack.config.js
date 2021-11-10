@@ -1,4 +1,5 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
 const share = mf.share;
@@ -24,16 +25,8 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
 
-        // For remotes (please adjust)
-        // name: "angularIoExample",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },
-
-        // For hosts (please adjust)
         remotes: {
-            "productsModule": "productsModule@http://localhost:4201/remoteEntry.js",
+            "productsModule": "productsModule@[window.remote.productsModuleUrl]/remoteEntry.js",
         },
 
         shared: share({
@@ -46,6 +39,7 @@ module.exports = {
         })
 
     }),
+    new ExternalTemplateRemotesPlugin(),
     sharedMappings.getPlugin()
   ],
 };
