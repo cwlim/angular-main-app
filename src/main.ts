@@ -1,7 +1,7 @@
 
 let remote = {
-  productsModuleUrl: 'http://localhost:4201',
-  profileComponentUrl: 'http://localhost:4202',
+  productsModuleUrl: 'http://demo-products-module.s3-website-us-east-1.amazonaws.com',
+  profileComponentUrl: 'http://demo-profile-wc.s3-website-us-east-1.amazonaws.com',
 };
 
 (window as any).remote = remote;
