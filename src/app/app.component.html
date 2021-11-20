@@ -1,8 +1,7 @@
 <h1>
   {{title}}
 </h1>
-
-<profile-component account-number="123456"></profile-component>
+<profile-component [attr.account-number]="accountNumber"></profile-component>
 
 <button routerLink="/customers">Customers</button>
 <button routerLink="/orders">Orders</button>

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Lazy loading feature modules';
+  accountNumber = '12344';
+  enabled = true;
 }
